@@ -2,6 +2,7 @@ let express = require('express');
 
 let app = express();
 
+// Just playing with the html here!
 app.get('/', function(req, res) {
    res.send(`<!DOCTYPE html>
 <html>
