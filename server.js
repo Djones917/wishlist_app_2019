@@ -2,6 +2,9 @@ let express = require('express');
 
 let app = express();
 
+// access users form data
+app.use(express.urlencoded({extended: false})); 
+
 // Just playing with the html here!
 app.get('/', function(req, res) {
    res.send(`<!DOCTYPE html>
@@ -19,7 +22,7 @@ app.get('/', function(req, res) {
     <div class="jumbotron p-3 shadow-sm">
       <form action="/create-item" method="POST">
         <div class="d-flex align-items-center">
-          <input autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
+          <input name="item" autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
           <button class="btn btn-primary">Add New Item</button>
         </div>
       </form>
@@ -60,7 +63,7 @@ app.get('/', function(req, res) {
 
 
 app.post('/create-item', function(req, res) {
-   console.log('Make this dynamic!');
+   console.log(req.body.item);
    res.send('Thanks for submitting!');
 });
 
