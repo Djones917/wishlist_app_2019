@@ -14,10 +14,10 @@ app.get('/', function(req, res) {
 </head>
 <body>
   <div class="container">
-    <h1 class="display-4 text-center py-1">To-Do App</h1>
+    <h1 class="display-4 text-center py-1">Wishlist App</h1>
     
     <div class="jumbotron p-3 shadow-sm">
-      <form>
+      <form action="/create-item" method="POST">
         <div class="d-flex align-items-center">
           <input autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
           <button class="btn btn-primary">Add New Item</button>
@@ -54,4 +54,18 @@ app.get('/', function(req, res) {
 </body>
 </html>`);
 });
+
+
+
+
+
+app.post('/create-item', function(req, res) {
+   console.log('Make this dynamic!');
+   res.send('Thanks for submitting!');
+});
+
+
+
+
+
 app.listen(3000);
