@@ -1,6 +1,7 @@
 let express = require('express');
 
 let app = express();
+let db; 
 
 // access users form data
 app.use(express.urlencoded({extended: false})); 
