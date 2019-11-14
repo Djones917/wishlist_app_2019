@@ -1,7 +1,16 @@
 let express = require('express');
+let mongodb = require('mongodb');
 
 let app = express();
 let db; 
+
+// Conntect to mongo db Note: to install  mongodb in command line npm install mongodb
+// This takes three arguments 1. Connection string 2. 
+let connectionString = '';
+mongodb.connect(connectionString, b, function(err, client) {
+  db = client.db();
+});
+
 
 // access users form data
 app.use(express.urlencoded({extended: false})); 
