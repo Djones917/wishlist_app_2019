@@ -64,8 +64,10 @@ app.get('/', function(req, res) {
 
 app.post('/create-item', function(req, res) {
   // console.log(req.body.item);
-  db.collection('items').insertOne({text: req.body.item}, b);
-   res.send('Thanks for submitting!');
+  db.collection('items').insertOne({text: req.body.item}, function() {
+    res.send('Thanks for submitting!');
+  });
+   //res.send('Thanks for submitting!');
 });
 
 
