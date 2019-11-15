@@ -9,6 +9,7 @@ let db;
 let connectionString = '';
 mongodb.connect(connectionString, b, function(err, client) {
   db = client.db();
+  app.listen(3000);
 });
 
 
@@ -84,4 +85,4 @@ app.post('/create-item', function(req, res) {
 
 
 
-app.listen(3000);
+//app.listen(3000);
