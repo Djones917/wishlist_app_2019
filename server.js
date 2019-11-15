@@ -5,9 +5,10 @@ let app = express();
 let db; 
 
 // Conntect to mongo db Note: to install  mongodb in command line npm install mongodb
+// Quick Note: When you are connecting in the MongoDB site 0.0.0.0/0 is to connect to any IP Address
 // This takes three arguments 1. Connection string 2. 
-let connectionString = '';
-mongodb.connect(connectionString, b, function(err, client) {
+let connectionString = 'mongodb+srv://toDoAppUser:<password>@cluster0-kwpqo.mongodb.net/test?retryWrites=true&w=majority';
+mongodb.connect(connectionString, {useNewUrlParser: true}, function(err, client) {
   db = client.db();
   app.listen(3000);
 });
