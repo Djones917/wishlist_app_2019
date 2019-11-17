@@ -1,25 +1,13 @@
+// Require express.js
 let express = require('express');
-let mongodb = require('mongodb');
 
 let app = express();
-let db; 
-// mongodb+srv://toDoAppUser:1234@cluster0-kwpqo.mongodb.net/toDoApp?retryWrites=true&w=majority
-// Conntect to mongo db Note: to install  mongodb in command line npm install mongodb
-// Quick Note: When you are connecting in the MongoDB site 0.0.0.0/0 is to connect to any IP Address
-// This takes three arguments 1. Connection string 2. 
-let connectionString = 'mongodb+srv://toDoAppUser:1234@cluster0-kwpqo.mongodb.net/toDoApp?retryWrites=true';
-mongodb.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, client) {
-  db = client.db();
-  app.listen(3000);
-});
 
-
-// access users form data
+// Used to access form data
 app.use(express.urlencoded({extended: false})); 
 
-// Just playing with the html here!
 app.get('/', function(req, res) {
-   res.send(`<!DOCTYPE html>
+    res.send(`<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -29,7 +17,7 @@ app.get('/', function(req, res) {
 </head>
 <body>
   <div class="container">
-    <h1 class="display-4 text-center py-1">Wishlist App</h1>
+    <h1 class="display-4 text-center py-1">To-Do App</h1>
     
     <div class="jumbotron p-3 shadow-sm">
       <form action="/create-item" method="POST">
@@ -71,19 +59,10 @@ app.get('/', function(req, res) {
 });
 
 
-
-
-
 app.post('/create-item', function(req, res) {
-  // console.log(req.body.item);
-  db.collection('items').insertOne({text: req.body.item}, function() {
-    res.send('Thanks for submitting!');
-  });
-   //res.send('Thanks for submitting!');
+  console.log(req.body.item);
+  res.send('Thanks for submitting');
 });
 
 
-
-
-
-//app.listen(3000);
+app.listen(3000);
