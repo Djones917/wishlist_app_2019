@@ -1,3 +1,4 @@
+// Remember when running file use node server in command line don't use npm server now do nodemon instead!
 // Require express.js
 let express = require('express');
 
