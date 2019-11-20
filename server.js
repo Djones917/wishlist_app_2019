@@ -1,4 +1,6 @@
 // Remember when running file use node server in command line don't use npm server now do nodemon instead!
+// Now with nodemon installed it will watch any changes and help with not having to always stop you server so now use - npm run watch
+// Remember it's best to run a lot of npm locally in project and not globally
 // Require express.js
 let express = require('express');
 
@@ -13,12 +15,12 @@ app.get('/', function(req, res) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple To-Do App</title>
+  <title>Wish List App</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
   <div class="container">
-    <h1 class="display-4 text-center py-1">To-Do App</h1>
+    <h1 class="display-4 text-center py-1">Wish List App</h1>
     
     <div class="jumbotron p-3 shadow-sm">
       <form action="/create-item" method="POST">
