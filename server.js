@@ -1,6 +1,7 @@
-// Remember when running file use node server in command line don't use npm server now do nodemon instead!
+// Remember when running file use "node server" in command line don't use "npm server" that is where I went wrong thinking I had a bug! Now with nodemon just use npm run watch.
 // Now with nodemon installed it will watch any changes and help with not having to always stop you server so now use - npm run watch
 // Remember it's best to run a lot of npm locally in project and not globally
+
 // Require express.js
 let express = require('express');
 
