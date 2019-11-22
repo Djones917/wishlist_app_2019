@@ -9,6 +9,16 @@ let mongodb = require('mongodb');
 let app = express();
 let db;
 
+
+
+// Connect
+let connectionString = '';
+mongodb.connect(connectionString, b, function(err, client) {
+  db = client.db();
+  app.listen(3000);
+});
+
+
 // Used to access form data
 app.use(express.urlencoded({extended: false})); 
 
@@ -74,4 +84,4 @@ app.post('/create-item', function(req, res) {
 });
 
 
-app.listen(3000);
+// app.listen(3000);
