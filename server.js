@@ -13,7 +13,7 @@ let db;
 
 // Connect
 let connectionString = 'mongodb+srv://wishListApp:12345@cluster0-kccxp.mongodb.net/wishListApp?retryWrites=true&w=majority';
-mongodb.connect(connectionString, {useNewUrlParser: true}, function(err, client) {
+mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client) {
   db = client.db();
   app.listen(3000);
 });
