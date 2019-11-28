@@ -52,8 +52,14 @@ app.get('/', function(req, res) {
     </div>
     
     <ul class="list-group pb-5">
-      ${items.map(function() {
-        return "hello"
+      ${items.map(function(item) {
+        return `<li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+      <span class="item-text">${item.text}</span>
+      <div>
+      <button class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
+      <button class="delete-me btn btn-danger btn-sm">Delete</button>
+      </div>
+      </li>`
       }).join('')}
     </ul>
     
@@ -71,7 +77,8 @@ app.get('/', function(req, res) {
 app.post('/create-item', function(req, res) {
   // console.log(req.body.item);
   db.collection('items').insertOne({text: req.body.item}, function() {
-    res.send('Thanks for submitting');
+    //res.send('Thanks for submitting');
+    res.redirect('/');
   });
   // res.send('Thanks for submitting');
 });
