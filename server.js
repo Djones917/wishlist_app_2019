@@ -52,7 +52,9 @@ app.get('/', function(req, res) {
     </div>
     
     <ul class="list-group pb-5">
-      ${items.map()}
+      ${items.map(function() {
+        return "hello"
+      }).join('')}
     </ul>
     
   </div>
