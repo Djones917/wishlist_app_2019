@@ -9,7 +9,7 @@ let mongodb = require('mongodb');
 let app = express();
 let db;
 
-
+app.use(express.static('public'));
 
 // Connect
 let connectionString = 'mongodb+srv://wishListApp:12345@cluster0-kccxp.mongodb.net/wishListApp?retryWrites=true&w=majority';
