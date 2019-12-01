@@ -66,7 +66,7 @@ app.get('/', function(req, res) {
   </div>
   
 
-  <script></script>
+  <script src="/browser.js"></script>
 </body>
 </html>`);
     });
