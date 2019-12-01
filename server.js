@@ -65,6 +65,8 @@ app.get('/', function(req, res) {
     
   </div>
   
+
+  <script></script>
 </body>
 </html>`);
     });
