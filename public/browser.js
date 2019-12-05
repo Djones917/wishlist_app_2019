@@ -1,6 +1,7 @@
 document.addEventListener("click", function(e) {
     if(e.target.classList.contains("edit-me")) {
-        prompt("Enter you new text!");
+        let userInput = prompt("Enter you new text!");
+        console.log(userInput);
     }
 });
 
