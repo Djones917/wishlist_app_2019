@@ -19,6 +19,7 @@ mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: tr
 });
 
 
+app.use(express.json());
 // Used to access form data
 app.use(express.urlencoded({extended: false})); 
 
@@ -85,5 +86,9 @@ app.post('/create-item', function(req, res) {
   // res.send('Thanks for submitting');
 });
 
+app.post('/update-item', function(req, res) {
+  console.log(req.body.text);
+  res.send("Success!");
+});
 
 // app.listen(3000);
