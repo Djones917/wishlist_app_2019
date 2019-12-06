@@ -87,8 +87,9 @@ app.post('/create-item', function(req, res) {
 });
 
 app.post('/update-item', function(req, res) {
-  console.log(req.body.text);
-  res.send("Success!");
+  //console.log(req.body.text);
+  //res.send("Success!");
+  db.collection('items').findOneAndUpdate(a, {$set: {text: req.body.text}}, c);
 });
 
 // app.listen(3000);
