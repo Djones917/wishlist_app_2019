@@ -57,7 +57,7 @@ app.get('/', function(req, res) {
         return `<li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
       <span class="item-text">${item.text}</span>
       <div>
-      <button class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
+      <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
       <button class="delete-me btn btn-danger btn-sm">Delete</button>
       </div>
       </li>`
@@ -89,7 +89,9 @@ app.post('/create-item', function(req, res) {
 app.post('/update-item', function(req, res) {
   //console.log(req.body.text);
   //res.send("Success!");
-  db.collection('items').findOneAndUpdate(a, {$set: {text: req.body.text}}, c);
+  db.collection('items').findOneAndUpdate(a, {$set: {text: req.body.text}}, function() {
+    res.send("Success!");
+  });
 });
 
 // app.listen(3000);
