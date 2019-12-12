@@ -2,7 +2,7 @@ document.addEventListener("click", function(e) {
     // Delete Feature
     if (e.target.classList.contains("delete-me")) {
         if(confirm("Delete item permanatly?")) {
-            axios.post('/update-item', { text: userInput, id: e.target.getAttribute("data-id") }).then(function () {
+            axios.post('/delete-item', {id: e.target.getAttribute("data-id") }).then(function () {
                 // Do something interesting
                 e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
             }).catch(function () {
