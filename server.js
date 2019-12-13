@@ -94,4 +94,8 @@ app.post('/update-item', function(req, res) {
   });
 });
 
+app.post('/delete-item', function(req, res) {
+  db.collection('items').deleteOne(a, b);
+});
+
 // app.listen(3000);
