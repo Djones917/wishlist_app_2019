@@ -4,7 +4,7 @@ document.addEventListener("click", function(e) {
         if(confirm("Delete item permanatly?")) {
             axios.post('/delete-item', {id: e.target.getAttribute("data-id") }).then(function () {
                 // Do something interesting
-                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+                e.target.parentElement.parentElement.remove();
             }).catch(function () {
                 console.log("Please try again later!");
             });
