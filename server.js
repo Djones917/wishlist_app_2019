@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
     <h1 class="display-4 text-center py-1">Wish List App</h1>
     
     <div class="jumbotron p-3 shadow-sm">
-      <form action="/create-item" method="POST">
+      <form id="create-form" action="/create-item" method="POST">
         <div class="d-flex align-items-center">
           <input name="item" autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
           <button class="btn btn-primary">Add New Item</button>
