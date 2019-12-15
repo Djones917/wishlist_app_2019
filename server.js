@@ -52,7 +52,7 @@ app.get('/', function(req, res) {
       </form>
     </div>
     
-    <ul class="list-group pb-5">
+    <ul id="item-list" class="list-group pb-5">
       ${items.map(function(item) {
         return `<li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
       <span class="item-text">${item.text}</span>
