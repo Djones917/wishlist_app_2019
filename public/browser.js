@@ -1,5 +1,14 @@
 // Create Feature
+document.getElementById("create-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
+    axios.post('/create-item', { text: x }).then(function () {
+        // Do something interesting
+        e.target.parentElement.parentElement.remove();
+    }).catch(function () {
+        console.log("Please try again later!");
+    });   
+});
 
 
 document.addEventListener("click", function(e) {
