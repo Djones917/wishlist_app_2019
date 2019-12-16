@@ -1,3 +1,7 @@
+function itemTemplate() {
+    return `Hello from a function!`
+}
+
 // Create Feature
 
 let createField = document.getElementById("create-field");
@@ -7,7 +11,7 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
 
     axios.post('/create-item', {text: createField.value}).then(function () {
         // Create the HTML for a new item
-       alert("You just created a new item!");
+       document.getElementById("item-list").insertAdjacentHTML("beforeend", itemTemplate());
     }).catch(function () {
         console.log("Please try again later!");
     });   
