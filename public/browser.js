@@ -1,4 +1,7 @@
 // Create Feature
+
+let createField = document.getElementById("create-field");
+
 document.getElementById("create-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
