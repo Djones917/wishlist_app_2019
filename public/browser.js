@@ -5,9 +5,9 @@ let createField = document.getElementById("create-field");
 document.getElementById("create-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    axios.post('/create-item', { text: x }).then(function () {
-        // Do something interesting
-        e.target.parentElement.parentElement.remove();
+    axios.post('/create-item', {text: createField.value}).then(function () {
+        // Create the HTML for a new item
+       alert("You just created a new item!");
     }).catch(function () {
         console.log("Please try again later!");
     });   
