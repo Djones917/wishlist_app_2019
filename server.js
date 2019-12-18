@@ -79,9 +79,8 @@ app.get('/', function(req, res) {
 
 app.post('/create-item', function(req, res) {
   // console.log(req.body.item);
-  db.collection('items').insertOne({text: req.body.text}, function() {
-    //res.send('Thanks for submitting');
-    res.send("Success!");
+  db.collection('items').insertOne({text: req.body.text}, function(err, info) {
+    res.json(info.ops[0]);
   });
   // res.send('Thanks for submitting');
 });
