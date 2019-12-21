@@ -66,6 +66,10 @@ app.get('/', function(req, res) {
     
   </div>
   
+  <script>
+    let items = ${JSON}
+  </script>
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/browser.js"></script>
 </body>
