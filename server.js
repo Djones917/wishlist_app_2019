@@ -24,7 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false})); 
 
 
+function passwordProtected(req, res, next) {
 
+}
 
 
 app.get('/', function(req, res) {
