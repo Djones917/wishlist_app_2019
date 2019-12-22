@@ -25,11 +25,12 @@ app.use(express.urlencoded({extended: false}));
 
 
 function passwordProtected(req, res, next) {
-
+  console.log("Our custom password Protected function just ran!");
+  next();
 }
 
 
-app.get('/', function(req, res) {
+app.get('/', passwordProtected, function(req, res) {
     db.collection('items').find().toArray(function(err, items) {
       // console.log(items);
 
