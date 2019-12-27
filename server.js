@@ -29,7 +29,8 @@ function passwordProtected(req, res, next) {
   if(req.headers.authorization == "Placeholder") {
     next();
   } else {
-
+    // 401 means unauthorized
+    res.status(401).send("Authentication Required!");
   }
 }
 
