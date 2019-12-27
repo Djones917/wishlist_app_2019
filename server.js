@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended: false}));
 function passwordProtected(req, res, next) {
   res.set('WWW-Authenticate', 'Basic realm="Simple Wishlist App"');
   if(req.headers.authorization == "Placeholder") {
-
+    next();
   } else {
 
   }
