@@ -27,7 +27,7 @@ app.use(express.urlencoded({extended: false}));
 function passwordProtected(req, res, next) {
   res.set('WWW-Authenticate', 'Basic realm="Simple Wishlist App"');
   console.log(req.headers.authorization);
-  if(req.headers.authorization == "Placeholder") {
+  if (req.headers.authorization == "Basic bGVhcm46amF2YXNjcmlwdA==") {
     next();
   } else {
     // 401 means unauthorized
