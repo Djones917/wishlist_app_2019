@@ -37,7 +37,10 @@ function passwordProtected(req, res, next) {
 }
 
 
-app.get('/', passwordProtected, function(req, res) {
+app.use(passwordProtected);
+
+
+app.get('/', function(req, res) {
     db.collection('items').find().toArray(function(err, items) {
       // console.log(items);
 
