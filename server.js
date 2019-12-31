@@ -88,8 +88,9 @@ app.get('/', function(req, res) {
 
 
 app.post('/create-item', function(req, res) {
+  let safeText = sanitizeHTML(req.body.text, {allowedTags: [], allowedAttributes: {}});
   // console.log(req.body.item);
-  db.collection('items').insertOne({text: req.body.text}, function(err, info) {
+  db.collection('items').insertOne({text: safeText}, function(err, info) {
     res.json(info.ops[0]);
   });
   // res.send('Thanks for submitting');
