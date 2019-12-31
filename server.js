@@ -5,6 +5,7 @@
 // Require express.js
 let express = require('express');
 let mongodb = require('mongodb');
+let sanitizeHTML = require('sanitize-html');
 
 let app = express();
 let db;
