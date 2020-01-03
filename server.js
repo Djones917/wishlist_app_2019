@@ -2,6 +2,8 @@
 // Now with nodemon installed it will watch any changes and help with not having to always stop you server so now use - npm run watch
 // Remember it's best to run a lot of npm locally in project and not globally
 
+// Pushing app online! 1-2020
+
 // Require express.js
 let express = require('express');
 let mongodb = require('mongodb');
