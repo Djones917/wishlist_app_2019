@@ -12,13 +12,20 @@ let sanitizeHTML = require('sanitize-html');
 let app = express();
 let db;
 
+// For Heroku port because localhost:3000 is just for us!
+let port = process.env.PORT;
+if(port == null || port == "") {
+  port = 3000;
+}
+
+
 app.use(express.static('public'));
 
 // Connect
 let connectionString = 'mongodb+srv://wishListApp:12345@cluster0-kccxp.mongodb.net/wishListApp?retryWrites=true&w=majority';
 mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client) {
   db = client.db();
-  app.listen(3000);
+  app.listen(port);
 });
 
 
