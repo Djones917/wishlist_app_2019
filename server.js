@@ -37,7 +37,7 @@ app.use(express.urlencoded({extended: false}));
 function passwordProtected(req, res, next) {
   res.set('WWW-Authenticate', 'Basic realm="Simple Wishlist App"');
   console.log(req.headers.authorization);
-  // The wierd Basic bGVhcm46amF2YXNjcmlwdA== is known as base64
+  //  Basic bGVhcm46amF2YXNjcmlwdA== is known as base64
   if (req.headers.authorization == "Basic bGVhcm46amF2YXNjcmlwdA==") {
     next();
   } else {
