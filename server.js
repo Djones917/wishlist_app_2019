@@ -3,7 +3,7 @@
 // Remember it's best to run a lot of npm locally in project and not globally
 
 // Pushing app online! 1-4-2020 Having a hard time pushing to heroku
-// I had a origin/master diverge I believe I have fixed it on 1-5-2020 trying again to heroku
+// I had a origin/master diverge I believe I have fixed it on 1-6-2020 trying again to heroku
 
 // Require express.js
 let express = require('express');
